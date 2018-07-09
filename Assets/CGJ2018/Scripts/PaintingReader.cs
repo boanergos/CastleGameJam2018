@@ -29,18 +29,16 @@ public class PaintingReader : MonoBehaviour
 		// 	return;
 
 		float error = 0f;
-		int found = 0;
 
 		foreach (KeyValuePair<string, float> kvp in CurrentExpression)
 		{
 			if (Painting.Expression.ContainsKey(kvp.Key))
 			{
 				error += Painting.Expression[kvp.Key] - kvp.Value;
-				found++;
 			}
 		}
 
-		float errorPercentage = error / found;
+		float errorPercentage = error / 52f;
 		Similarity = 100 - (Mathf.Abs(errorPercentage) * 100);
 
 		if (DebugText)

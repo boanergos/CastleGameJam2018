@@ -35,6 +35,8 @@ public class UnityARFaceMeshManager : MonoBehaviour {
 
 	void FaceAdded (ARFaceAnchor anchorData)
 	{
+		return;
+
 		gameObject.transform.localPosition = UnityARMatrixOps.GetPosition (anchorData.transform);
 		gameObject.transform.localRotation = UnityARMatrixOps.GetRotation (anchorData.transform);
 
@@ -52,6 +54,8 @@ public class UnityARFaceMeshManager : MonoBehaviour {
 
 	void FaceUpdated (ARFaceAnchor anchorData)
 	{
+		return;
+
 		if (faceMesh != null) {
 			gameObject.transform.localPosition = UnityARMatrixOps.GetPosition (anchorData.transform);
 			gameObject.transform.localRotation = UnityARMatrixOps.GetRotation (anchorData.transform);
