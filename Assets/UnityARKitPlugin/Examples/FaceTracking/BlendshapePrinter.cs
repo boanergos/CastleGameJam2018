@@ -40,8 +40,8 @@ public class BlendshapePrinter : MonoBehaviour {
 			GUILayout.Box (blendshapes);
 			GUILayout.EndHorizontal ();
 
-			Debug.Log (shapeNames);
-			Debug.Log (valueNames);
+			// Debug.Log (shapeNames);
+			// Debug.Log (valueNames);
 
 		}
 	}
