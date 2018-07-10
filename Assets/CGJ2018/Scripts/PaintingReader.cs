@@ -12,36 +12,31 @@ public class PaintingReader : MonoBehaviour
 	public FloatVariable Similarity;
 	public Text DebugText;
 
-	void OnEnable ()
-	{
-		Painting.Load();
-	}
-
-	void Awake ()
+	public void Refresh ()
 	{
 		Similarity.Value = 0f;
-	}
-
-	void Start ()
-	{
-		UnityARSessionNativeInterface.ARFaceAnchorUpdatedEvent += FaceUpdated;
-
+		Painting.Load();
 		UpdatePaintingImage();
 	}
 
-	public void UpdatePaintingImage ()
+	private void Start ()
+	{
+		UnityARSessionNativeInterface.ARFaceAnchorUpdatedEvent += FaceUpdated;
+	}
+
+	private void UpdatePaintingImage ()
 	{
 		PaintingImage.sprite = Painting.Image;
 	}
 
-	void FaceUpdated (ARFaceAnchor anchorData)
+	private void FaceUpdated (ARFaceAnchor anchorData)
 	{
 		CurrentExpression = anchorData.blendShapes;
 
 		CompareFace();
 	}
 	
-	void CompareFace ()
+	private void CompareFace ()
 	{
 		float error = 0f;
 
