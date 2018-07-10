@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PaintingImage: {fileID: 170087040}
-  Painting: {fileID: 11400000, guid: efee20dd8b7b744f98f6d4de70827a92, type: 2}
+  Painting: {fileID: 11400000, guid: 2b058ba499f3c4ba59790a84782334b8, type: 2}
   Similarity: {fileID: 11400000, guid: 06d587520ac65491ead17a1a95629a27, type: 2}
   DebugText: {fileID: 215721048}
   DebugMode: 0
@@ -1335,7 +1335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PaintingImage: {fileID: 170087040}
-  Painting: {fileID: 11400000, guid: efee20dd8b7b744f98f6d4de70827a92, type: 2}
+  Painting: {fileID: 11400000, guid: 2b058ba499f3c4ba59790a84782334b8, type: 2}
 --- !u!4 &2140376679
 Transform:
   m_ObjectHideFlags: 0
