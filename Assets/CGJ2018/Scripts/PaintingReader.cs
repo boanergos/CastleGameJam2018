@@ -6,14 +6,27 @@ using UnityEngine.UI;
 
 public class PaintingReader : MonoBehaviour 
 {
+	public Image PaintingImage;
 	public Painting Painting;
 	public Dictionary<string, float> CurrentExpression;
-	public float Similarity;
+	public FloatVariable Similarity;
 	public Text DebugText;
+
+	void Awake ()
+	{
+		Similarity.Value = 0f;
+	}
 
 	void Start ()
 	{
 		UnityARSessionNativeInterface.ARFaceAnchorUpdatedEvent += FaceUpdated;
+
+		UpdatePaintingImage();
+	}
+
+	public void UpdatePaintingImage ()
+	{
+		PaintingImage.sprite = Painting.Image;
 	}
 
 	void FaceUpdated (ARFaceAnchor anchorData)
@@ -38,10 +51,11 @@ public class PaintingReader : MonoBehaviour
 			}
 		}
 
+		// Magic numbers™
 		float errorPercentage = error / 52f;
-		Similarity = 100 - (Mathf.Abs(errorPercentage) * 100);
+		Similarity.Value = 100 - (Mathf.Abs(errorPercentage) * 100);
 
 		if (DebugText)
-			DebugText.text = Similarity.ToString();
+			DebugText.text = Similarity.Value.ToString();
 	}
 }
