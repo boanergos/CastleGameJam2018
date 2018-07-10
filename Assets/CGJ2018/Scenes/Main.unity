@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PaintingImage: {fileID: 170087040}
-  Painting: {fileID: 11400000, guid: 2b058ba499f3c4ba59790a84782334b8, type: 2}
+  Painting: {fileID: 11400000, guid: a6fded5425a5d4f5b8a0503cee3561d6, type: 2}
   Similarity: {fileID: 11400000, guid: 06d587520ac65491ead17a1a95629a27, type: 2}
   DebugText: {fileID: 215721048}
   DebugMode: 0
@@ -257,7 +257,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.75}
+  m_AnchorMax: {x: 1, y: 0.66161996}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1335,7 +1335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PaintingImage: {fileID: 170087040}
-  Painting: {fileID: 11400000, guid: 2b058ba499f3c4ba59790a84782334b8, type: 2}
+  Painting: {fileID: 11400000, guid: a6fded5425a5d4f5b8a0503cee3561d6, type: 2}
 --- !u!4 &2140376679
 Transform:
   m_ObjectHideFlags: 0
