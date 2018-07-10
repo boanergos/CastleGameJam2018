@@ -11,6 +11,8 @@ public class PaintingReader : MonoBehaviour
 	public Dictionary<string, float> CurrentExpression;
 	public FloatVariable Similarity;
 	public Text DebugText;
+	[HideInInspector]
+	public bool DebugMode;
 
 	public void Refresh ()
 	{
@@ -52,7 +54,9 @@ public class PaintingReader : MonoBehaviour
 		float errorPercentage = error / 52f;
 		Similarity.Value = 100 - (Mathf.Abs(errorPercentage) * 100);
 
-		// if (DebugText)
-		// 	DebugText.text = Similarity.Value.ToString();
+		if (DebugMode)
+			DebugText.text = Similarity.Value.ToString();
+		else
+			DebugText.gameObject.SetActive(false);			
 	}
 }
