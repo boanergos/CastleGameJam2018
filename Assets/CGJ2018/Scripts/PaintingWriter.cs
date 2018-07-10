@@ -46,11 +46,8 @@ public class PaintingWriter : MonoBehaviour
 	{
 		foreach (KeyValuePair<string, float> kvp in currentBlendShapes) 
 		{
-			if (!Painting.Expression.ContainsKey(kvp.Key))
-				Painting.Expression.Add(kvp);
-			else
-				Painting.Expression[kvp.Key] = kvp.Value;
-		} 
+			Painting.AddOrRefresh(kvp.Key, kvp.Value);
+		}
 	}
 
 	void OnGUI ()

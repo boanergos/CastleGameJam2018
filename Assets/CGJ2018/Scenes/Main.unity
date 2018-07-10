@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PaintingImage: {fileID: 170087040}
-  Painting: {fileID: 11400000, guid: 56c5c67ab60dd4da4bc236d82d187c7c, type: 2}
+  Painting: {fileID: 11400000, guid: 979f4776422a945f483b18b5d6d9813f, type: 2}
   Similarity: {fileID: 11400000, guid: 06d587520ac65491ead17a1a95629a27, type: 2}
   DebugText: {fileID: 215721048}
 --- !u!4 &84006535
@@ -1071,7 +1071,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2140376678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,7 +1084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PaintingImage: {fileID: 170087040}
-  Painting: {fileID: 11400000, guid: 56c5c67ab60dd4da4bc236d82d187c7c, type: 2}
+  Painting: {fileID: 11400000, guid: 7f27cfbf073eb427ba9c92e6c0e32ad8, type: 2}
 --- !u!4 &2140376679
 Transform:
   m_ObjectHideFlags: 0

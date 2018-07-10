@@ -45,9 +45,9 @@ public class PaintingReader : MonoBehaviour
 
 		foreach (KeyValuePair<string, float> kvp in CurrentExpression)
 		{
-			if (Painting.Expression.ContainsKey(kvp.Key))
+			if (Painting.ContainsKey(kvp.Key))
 			{
-				error += Painting.Expression[kvp.Key] - kvp.Value;
+				error += Painting.GetValue(kvp.Key) - kvp.Value;
 			}
 		}
 

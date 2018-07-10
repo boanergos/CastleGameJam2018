@@ -12,6 +12,4 @@ MonoBehaviour:
   m_Name: La_1_M
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: b37e9d1eefa654d4aaf09f8b3ad99e61, type: 3}
-  Expression:
-    m_keys: []
-    m_values: []
+  Expression: []
