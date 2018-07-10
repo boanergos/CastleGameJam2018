@@ -2,12 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Newtonsoft.Json;
 
 [CreateAssetMenu]
 public class Painting : ScriptableObject 
 {
+	private string dataPath;
+
 	public Sprite Image;
+	[HideInInspector]
 	public List<ExpressionData> Expression = new List<ExpressionData>();
+
+	public void OnEnable()
+	{
+		dataPath = Application.dataPath + "/Resources/" + this.name;
+	}
 
 	public void AddOrRefresh(string key, float value)
 	{
@@ -54,6 +63,23 @@ public class Painting : ScriptableObject
 				return;
 			}
 		}
+	}
+
+	public void Load()
+	{
+		TextAsset datafile = Resources.Load(this.name) as TextAsset;
+		
+		if (datafile)
+			Expression = JsonConvert.DeserializeObject<List<ExpressionData>>(datafile.text);
+	}
+
+	public void Write()
+	{
+		#if UNITY_EDITOR_OSX
+		string dataContent = JsonConvert.SerializeObject(Expression);
+		System.IO.File.WriteAllText(dataPath + ".txt", dataContent);
+		UnityEditor.AssetDatabase.Refresh();
+		#endif
 	}
 }
 

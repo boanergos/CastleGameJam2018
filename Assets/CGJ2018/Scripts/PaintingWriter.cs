@@ -48,6 +48,9 @@ public class PaintingWriter : MonoBehaviour
 		{
 			Painting.AddOrRefresh(kvp.Key, kvp.Value);
 		}
+
+		Painting.Write();
+		Painting.Load();
 	}
 
 	void OnGUI ()

@@ -12,6 +12,11 @@ public class PaintingReader : MonoBehaviour
 	public FloatVariable Similarity;
 	public Text DebugText;
 
+	void OnEnable ()
+	{
+		Painting.Load();
+	}
+
 	void Awake ()
 	{
 		Similarity.Value = 0f;
@@ -38,9 +43,6 @@ public class PaintingReader : MonoBehaviour
 	
 	void CompareFace ()
 	{
-		// if (!CurrentExpression)
-		// 	return;
-
 		float error = 0f;
 
 		foreach (KeyValuePair<string, float> kvp in CurrentExpression)
@@ -55,7 +57,7 @@ public class PaintingReader : MonoBehaviour
 		float errorPercentage = error / 52f;
 		Similarity.Value = 100 - (Mathf.Abs(errorPercentage) * 100);
 
-		if (DebugText)
-			DebugText.text = Similarity.Value.ToString();
+		// if (DebugText)
+		// 	DebugText.text = Similarity.Value.ToString();
 	}
 }
