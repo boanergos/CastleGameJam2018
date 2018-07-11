@@ -7,9 +7,13 @@ public class KeepPoseCountdown : MonoBehaviour
 {
 	public FloatVariable PoseSimilarity;
 	public Image CountdownCircle;
+
 	public GameEvent OnPoseMatchCompleted;
+	public GameEvent OnPaintingCountdownFinished;
+
 	private float poseCompletion;
 	private float poseFillSpeed = 0.5f;
+	private bool record;
 
 	void Awake ()
 	{
@@ -18,6 +22,9 @@ public class KeepPoseCountdown : MonoBehaviour
 
 	void Update () 
 	{
+		if (!record)
+			return;
+
 		poseCompletion = Mathf.Clamp(poseCompletion, 0f, 1.1f);
 
 		if (PoseSimilarity.Value > 99f)
@@ -32,5 +39,17 @@ public class KeepPoseCountdown : MonoBehaviour
 			OnPoseMatchCompleted.Raise();
 			poseCompletion = 0f;
 		}
+	}
+
+	public void StartRecording ()
+	{
+		poseCompletion = 0f;
+		record = true;
+	}
+
+	public void StopRecording ()
+	{
+		poseCompletion = 0f;
+		record = false;
 	}
 }

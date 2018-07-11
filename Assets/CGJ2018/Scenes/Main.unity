@@ -387,6 +387,8 @@ MonoBehaviour:
   CountdownCircle: {fileID: 376958000}
   OnPaintingCountdownFinished: {fileID: 11400000, guid: 476fba71b6ab542bda80357815464de5,
     type: 2}
+  PosesCompleted: {fileID: 11400000, guid: 446ad6657441047e3a14f7cdb1549e2f, type: 2}
+  PosesMax: {fileID: 11400000, guid: 68f5574a574414e91824bc10ad790085, type: 2}
 --- !u!114 &172328661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,6 +417,48 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &191397861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 191397863}
+  - component: {fileID: 191397862}
+  m_Layer: 0
+  m_Name: LeaderboardManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &191397862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 191397861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67df06ba822d84cd882633ea222589d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStartGamePressed: {fileID: 11400000, guid: babbc2352fca64a74b8cc9de363fa2e2, type: 2}
+  OnGameCompleted: {fileID: 11400000, guid: 014c007fec4d943be9409059f9d98127, type: 2}
+--- !u!4 &191397863
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 191397861}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &200926711
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,8 +950,8 @@ GameObject:
   m_Component:
   - component: {fileID: 421563832}
   - component: {fileID: 421563831}
-  - component: {fileID: 421563834}
   - component: {fileID: 421563833}
+  - component: {fileID: 421563834}
   m_Layer: 0
   m_Name: PaintingsManager
   m_TagString: Untagged
@@ -984,6 +1028,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bdfe698c5c8634fb19aa828ba7f51536, type: 2}
   PosesCompleted: {fileID: 11400000, guid: 446ad6657441047e3a14f7cdb1549e2f, type: 2}
   PosesMax: {fileID: 11400000, guid: 68f5574a574414e91824bc10ad790085, type: 2}
+  PlayerScore: {fileID: 11400000, guid: d5a0872fa9f7d4442b32f16ddddc14c0, type: 2}
   OnGameCompleted: {fileID: 11400000, guid: 014c007fec4d943be9409059f9d98127, type: 2}
   OnStartGamePressed: {fileID: 11400000, guid: babbc2352fca64a74b8cc9de363fa2e2, type: 2}
   DebugMode: 0
@@ -1039,12 +1084,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88da5fddd52df44eaafe8cd6868f5b6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: babbc2352fca64a74b8cc9de363fa2e2, type: 2}
+  Event: {fileID: 11400000, guid: edfa8e97c27024d149e56dfa5167255c, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 421563831}
-        m_MethodName: StartGame
+        m_MethodName: ResetGameParameters
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1991,6 +2036,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 172328656}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1646075920
@@ -2299,6 +2355,8 @@ GameObject:
   - component: {fileID: 2030603975}
   - component: {fileID: 2030603974}
   - component: {fileID: 2030603976}
+  - component: {fileID: 2030603978}
+  - component: {fileID: 2030603977}
   m_Layer: 5
   m_Name: CountdownCircle
   m_TagString: Untagged
@@ -2372,6 +2430,64 @@ MonoBehaviour:
   CountdownCircle: {fileID: 2030603974}
   OnPoseMatchCompleted: {fileID: 11400000, guid: b261e68303b1148c38d2ea78fe4cce00,
     type: 2}
+  OnPaintingCountdownFinished: {fileID: 11400000, guid: 476fba71b6ab542bda80357815464de5,
+    type: 2}
+--- !u!114 &2030603977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2030603972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88da5fddd52df44eaafe8cd6868f5b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 476fba71b6ab542bda80357815464de5, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2030603976}
+        m_MethodName: StartRecording
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &2030603978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2030603972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88da5fddd52df44eaafe8cd6868f5b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: b261e68303b1148c38d2ea78fe4cce00, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2030603976}
+        m_MethodName: StopRecording
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2127323884
 GameObject:
   m_ObjectHideFlags: 0

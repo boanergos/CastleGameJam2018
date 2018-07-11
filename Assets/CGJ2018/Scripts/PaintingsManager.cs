@@ -10,6 +10,7 @@ public class PaintingsManager : MonoBehaviour
 	// Variables
 	public IntVariable PosesCompleted;
 	public IntVariable PosesMax;
+	public IntVariable PlayerScore;
 	// Events
 	public GameEvent OnGameCompleted;
 	public GameEvent OnStartGamePressed;
@@ -31,7 +32,7 @@ public class PaintingsManager : MonoBehaviour
 			GameObject.Find("DebugText").SetActive(false);
 		}
 
-		ShufflePaintings();
+		ResetGameParameters();
 	}
 
 	public void StartGame ()
@@ -46,7 +47,7 @@ public class PaintingsManager : MonoBehaviour
 			return;
 
 		// if (currentPaintingIndex >= Paintings.Length)
-		if (PosesCompleted.Value > PosesMax.Value)
+		if (PosesCompleted.Value > PosesMax.Value - 1)
 		{
 			OnGameCompleted.Raise();
 			return;
@@ -56,6 +57,13 @@ public class PaintingsManager : MonoBehaviour
 		PaintingReader.Refresh();
 
 		PosesCompleted.Value++;
+	}
+
+	public void ResetGameParameters ()
+	{
+		PosesCompleted.Value = 0;
+		PlayerScore.Value = 0;
+		ShufflePaintings();
 	}
 
 	public void ShufflePaintings ()
