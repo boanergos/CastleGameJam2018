@@ -30,9 +30,9 @@ public class KeepPoseCountdown : MonoBehaviour
 		if (PoseSimilarity.Value > 99f)
 			poseCompletion += poseFillSpeed * Time.deltaTime;
 		else
-			poseCompletion -= poseFillSpeed * Time.deltaTime;
+			poseCompletion -= (poseFillSpeed / 2f) * Time.deltaTime;
 
-		CountdownCircle.fillAmount = poseCompletion;
+		CountdownCircle.fillAmount = Mathf.Lerp(CountdownCircle.fillAmount, poseCompletion, Time.deltaTime);
 
 		if (poseCompletion > 1f)
 		{
