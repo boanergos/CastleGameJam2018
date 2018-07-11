@@ -56,7 +56,5 @@ public class PaintingReader : MonoBehaviour
 
 		if (DebugMode)
 			DebugText.text = Similarity.Value.ToString();
-		else
-			DebugText.gameObject.SetActive(false);			
 	}
 }
