@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PaintingImage: {fileID: 170087040}
-  Painting: {fileID: 11400000, guid: 933c62c02eeb344f0a29e69e6bfeaa21, type: 2}
+  Painting: {fileID: 11400000, guid: 1084b8fd23d774806a89e8f72c4c8cae, type: 2}
   Similarity: {fileID: 11400000, guid: 06d587520ac65491ead17a1a95629a27, type: 2}
   DebugText: {fileID: 215721048}
   DebugMode: 0
@@ -1031,7 +1031,7 @@ MonoBehaviour:
   PlayerScore: {fileID: 11400000, guid: d5a0872fa9f7d4442b32f16ddddc14c0, type: 2}
   OnGameCompleted: {fileID: 11400000, guid: 014c007fec4d943be9409059f9d98127, type: 2}
   OnStartGamePressed: {fileID: 11400000, guid: babbc2352fca64a74b8cc9de363fa2e2, type: 2}
-  DebugMode: 0
+  DebugMode: 1
 --- !u!4 &421563832
 Transform:
   m_ObjectHideFlags: 0
@@ -2544,7 +2544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PaintingImage: {fileID: 170087040}
-  Painting: {fileID: 11400000, guid: 933c62c02eeb344f0a29e69e6bfeaa21, type: 2}
+  Painting: {fileID: 11400000, guid: 1084b8fd23d774806a89e8f72c4c8cae, type: 2}
 --- !u!4 &2140376679
 Transform:
   m_ObjectHideFlags: 0
