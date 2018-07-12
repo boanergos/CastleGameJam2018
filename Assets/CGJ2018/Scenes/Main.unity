@@ -588,7 +588,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67df06ba822d84cd882633ea222589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScreenshotManager: {fileID: 643137065}
   PlayerScore: {fileID: 11400000, guid: d5a0872fa9f7d4442b32f16ddddc14c0, type: 2}
+  PlayerScoreElements: []
 --- !u!4 &191397863
 Transform:
   m_ObjectHideFlags: 0
@@ -616,7 +618,29 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: 014c007fec4d943be9409059f9d98127, type: 2}
   Response:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 191397862}
+        m_MethodName: StopRecording
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 191397862}
+        m_MethodName: AddPlayerScoreElement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &191397865
@@ -633,7 +657,18 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: babbc2352fca64a74b8cc9de363fa2e2, type: 2}
   Response:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 191397862}
+        m_MethodName: StartRecording
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &200926711
