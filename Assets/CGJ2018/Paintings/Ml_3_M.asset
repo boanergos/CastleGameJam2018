@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Name: Ml_3_M
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 64b652977c4204ffc9fe95ebf870beb1, type: 3}
+  Difficulty: 5
   Expression: []

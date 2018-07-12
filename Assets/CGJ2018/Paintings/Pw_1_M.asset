@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Pw_1_M
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: dc9fa0fdd890147bbb2fc51fd403070d, type: 3}
+  Difficulty: 2
   Expression:
   - Key: eyeBlink_R
     Value: 0.11268912

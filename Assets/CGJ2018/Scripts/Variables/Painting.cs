@@ -10,6 +10,7 @@ public class Painting : ScriptableObject
 	private string dataPath;
 
 	public Sprite Image;
+	public int Difficulty;
 	[HideInInspector]
 	public List<ExpressionData> Expression = new List<ExpressionData>();
 

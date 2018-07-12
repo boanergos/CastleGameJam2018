@@ -12,4 +12,109 @@ MonoBehaviour:
   m_Name: Th_2_F
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 1d8d3edfc546641619e62a3c4909d15a, type: 3}
-  Expression: []
+  Difficulty: 1
+  Expression:
+  - Key: eyeBlink_R
+    Value: -0.0000611078
+  - Key: eyeWide_R
+    Value: 0.22774236
+  - Key: mouthLowerDown_L
+    Value: 0.023400918
+  - Key: eyeLookDown_R
+    Value: 0
+  - Key: cheekSquint_L
+    Value: 0.034285594
+  - Key: mouthDimple_R
+    Value: 0.0573893
+  - Key: browInnerUp
+    Value: 0.023220886
+  - Key: eyeLookIn_L
+    Value: 0
+  - Key: mouthPress_L
+    Value: 0.07299131
+  - Key: mouthStretch_R
+    Value: 0.09276989
+  - Key: browDown_L
+    Value: 0.5198533
+  - Key: mouthFunnel
+    Value: 0.08205429
+  - Key: noseSneer_L
+    Value: 0.11951781
+  - Key: eyeLookOut_L
+    Value: 0.53120595
+  - Key: eyeLookIn_R
+    Value: 0.632424
+  - Key: mouthLowerDown_R
+    Value: 0.025166007
+  - Key: browOuterUp_R
+    Value: -5.714533e-20
+  - Key: mouthLeft
+    Value: 0.0000000029042408
+  - Key: cheekSquint_R
+    Value: 0.042546738
+  - Key: jawOpen
+    Value: 0.009526299
+  - Key: eyeBlink_L
+    Value: -0.000027124663
+  - Key: jawForward
+    Value: 0.044448845
+  - Key: mouthPress_R
+    Value: 0.05548072
+  - Key: noseSneer_R
+    Value: 0.10091714
+  - Key: jawRight
+    Value: 0.04211376
+  - Key: mouthShrugLower
+    Value: 0.1455773
+  - Key: eyeSquint_L
+    Value: 0.3713195
+  - Key: eyeLookOut_R
+    Value: 0
+  - Key: mouthFrown_L
+    Value: 0.2778703
+  - Key: cheekPuff
+    Value: 0.07342266
+  - Key: mouthStretch_L
+    Value: 0.07850208
+  - Key: tongueOut
+    Value: 0.00037962082
+  - Key: mouthRollLower
+    Value: 0.14345685
+  - Key: mouthUpperUp_R
+    Value: 0.034027778
+  - Key: mouthShrugUpper
+    Value: 0.0831324
+  - Key: eyeSquint_R
+    Value: 0.37135297
+  - Key: mouthSmile_L
+    Value: -1.4739524e-18
+  - Key: eyeLookDown_L
+    Value: 0
+  - Key: eyeWide_L
+    Value: 0.22780117
+  - Key: mouthClose
+    Value: 0.008704725
+  - Key: jawLeft
+    Value: 0
+  - Key: mouthDimple_L
+    Value: 0.06760839
+  - Key: mouthFrown_R
+    Value: 0.29380956
+  - Key: mouthPucker
+    Value: 0.07041692
+  - Key: mouthRight
+    Value: 0.005761556
+  - Key: browDown_R
+    Value: 0.5198459
+  - Key: eyeLookUp_L
+    Value: 0.07048427
+  - Key: mouthSmile_R
+    Value: 1.9034571e-19
+  - Key: mouthUpperUp_L
+    Value: 0.03945008
+  - Key: browOuterUp_L
+    Value: -5.7132673e-20
+  - Key: mouthRollUpper
+    Value: 0.054475214
+  - Key: eyeLookUp_R
+    Value: 0.068625644

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Th_1_M
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: aff6e13cabbf94c7097532eed3544905, type: 3}
+  Difficulty: 3
   Expression:
   - Key: eyeBlink_R
     Value: -0.000075400145

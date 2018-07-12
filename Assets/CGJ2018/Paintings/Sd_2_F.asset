@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Sd_2_F
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: fd3de7e768901442eac4401e36b01bb1, type: 3}
+  Difficulty: 1
   Expression:
   - Key: eyeBlink_R
     Value: 0.0063955477
