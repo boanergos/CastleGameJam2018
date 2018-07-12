@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ebc8ec8649a414a81c21daf1c05f71, type: 3}
   m_Name: PosesMax
   m_EditorClassIdentifier: 
-  Value: 3
+  Value: 5

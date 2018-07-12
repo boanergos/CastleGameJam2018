@@ -32,7 +32,7 @@ public class KeepPoseCountdown : MonoBehaviour
 		else
 			poseCompletion -= (poseFillSpeed / 2f) * Time.deltaTime;
 
-		CountdownCircle.fillAmount = Mathf.Lerp(CountdownCircle.fillAmount, poseCompletion, Time.deltaTime);
+		CountdownCircle.fillAmount = poseCompletion;
 
 		if (poseCompletion > 1f)
 		{
