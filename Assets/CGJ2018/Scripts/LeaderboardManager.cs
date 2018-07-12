@@ -16,7 +16,7 @@ public class LeaderboardManager : MonoBehaviour
 
 	public void OnEnable()
 	{
-		filePath = Application.dataPath + "/Resources/Scores/Scores.txt";
+		filePath = System.IO.Path.Combine(Application.persistentDataPath, "Scores.txt");
 
 		LoadData();
 	}
@@ -47,18 +47,23 @@ public class LeaderboardManager : MonoBehaviour
 		SaveData();
 	}
 
-	public void LoadData ()
+	private void LoadData ()
 	{
-		TextAsset datafile = Resources.Load(this.name) as TextAsset;
+		string dataContent = System.IO.File.ReadAllText(filePath);
 		
-		if (datafile)
-			PlayerScoreElements = JsonConvert.DeserializeObject<List<PlayerScoreElement>>(datafile.text);
+		if (!String.IsNullOrEmpty(dataContent))
+			PlayerScoreElements = JsonConvert.DeserializeObject<List<PlayerScoreElement>>(dataContent);
 	}
 
-	public void SaveData ()
+	private void SaveData ()
 	{
 		string dataContent = JsonConvert.SerializeObject(PlayerScoreElements);
 		System.IO.File.WriteAllText(filePath, dataContent);
+	}
+
+	private void OnGUI ()
+	{
+		GUI.Box(new Rect(0, 0, 200, 200), PlayerScoreElements.Count.ToString());
 	}
 }
 

@@ -25,6 +25,10 @@ public class KeepPoseCountdown : MonoBehaviour
 		if (!record)
 			return;
 
+		// CHEATCODE
+		if (Input.touchCount >= 2)
+			OnPoseMatchCompleted.Raise();
+
 		poseCompletion = Mathf.Clamp(poseCompletion, 0f, 1.1f);
 
 		if (PoseSimilarity.Value > 99f)
