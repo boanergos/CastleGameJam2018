@@ -8,7 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19ebc8ec8649a414a81c21daf1c05f71, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c6b88d9fb39246419f6bd7a636eb783, type: 3}
   m_Name: PlayerScore
   m_EditorClassIdentifier: 
   Value: 0

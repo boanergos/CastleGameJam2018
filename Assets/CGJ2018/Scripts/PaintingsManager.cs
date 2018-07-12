@@ -11,7 +11,7 @@ public class PaintingsManager : MonoBehaviour
 	// Variables
 	public IntVariable PosesCompleted;
 	public IntVariable PosesMax;
-	public IntVariable PlayerScore;
+	public FloatVariable PlayerScore;
 	// Events
 	public GameEvent OnGameCompleted;
 	public GameEvent OnStartGamePressed;
