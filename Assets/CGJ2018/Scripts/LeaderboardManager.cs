@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 public class LeaderboardManager : MonoBehaviour 
 {
-	private float startScore = 1000000;
+	private float startScore = 100000;
 	private bool lowerScore = false;
 	private string filePath;
 
@@ -35,13 +35,14 @@ public class LeaderboardManager : MonoBehaviour
 	private void Update ()
 	{
 		if (lowerScore)
-			PlayerScore.Value -= Time.deltaTime;
+			PlayerScore.Value -= Time.deltaTime * 100f;
 	}
 
 	public void AddPlayerScoreElement ()
 	{
-		Texture2D lastFace = ScreenshotManager.FaceScreenshots[ScreenshotManager.FaceScreenshots.Count - 1];
-		PlayerScoreElement element = new PlayerScoreElement(PlayerScore.Value, lastFace);
+		Texture2D lastFace = ScreenshotManager.FaceScreenshots[ScreenshotManager.FaceScreenshots.Count];
+		byte[] lastFaceJpg = ImageConversion.EncodeToJPG(lastFace, 60);
+		PlayerScoreElement element = new PlayerScoreElement(PlayerScore.Value, lastFaceJpg);
 		PlayerScoreElements.Add(element);
 
 		SaveData();
@@ -49,10 +50,15 @@ public class LeaderboardManager : MonoBehaviour
 
 	private void LoadData ()
 	{
+		if (!System.IO.File.Exists(filePath))
+		{
+			Debug.Log("Leaderboard file doesn't exist");
+			return;
+		}
+
 		string dataContent = System.IO.File.ReadAllText(filePath);
-		
-		if (!String.IsNullOrEmpty(dataContent))
-			PlayerScoreElements = JsonConvert.DeserializeObject<List<PlayerScoreElement>>(dataContent);
+
+		PlayerScoreElements = JsonConvert.DeserializeObject<List<PlayerScoreElement>>(dataContent);
 	}
 
 	private void SaveData ()
@@ -60,20 +66,15 @@ public class LeaderboardManager : MonoBehaviour
 		string dataContent = JsonConvert.SerializeObject(PlayerScoreElements);
 		System.IO.File.WriteAllText(filePath, dataContent);
 	}
-
-	private void OnGUI ()
-	{
-		GUI.Box(new Rect(0, 0, 200, 200), PlayerScoreElements.Count.ToString());
-	}
 }
 
 [Serializable]
 public class PlayerScoreElement
 {
 	public float PlayerScore;
-	public Texture2D PlayerPhoto;
+	public byte[] PlayerPhoto;
 
-	public PlayerScoreElement (float score, Texture2D photo)
+	public PlayerScoreElement (float score, byte[] photo)
 	{
 		this.PlayerScore = score;
 		this.PlayerPhoto = photo;

@@ -67,7 +67,7 @@ public class PaintingsManager : MonoBehaviour
 	{
 		PosesCompleted.Value = 0;
 		PlayerScore.Value = 0;
-		ShufflePaintings();
+		// ShufflePaintings();
 		MakePaintingsQueue();
 	}
 
