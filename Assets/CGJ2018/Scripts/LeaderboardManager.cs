@@ -40,7 +40,7 @@ public class LeaderboardManager : MonoBehaviour
 
 	public void AddPlayerScoreElement ()
 	{
-		Texture2D lastFace = ScreenshotManager.FaceScreenshots[ScreenshotManager.FaceScreenshots.Count];
+		Texture2D lastFace = ScreenshotManager.FaceScreenshots[ScreenshotManager.FaceScreenshots.Count - 1];
 		byte[] lastFaceJpg = ImageConversion.EncodeToJPG(lastFace, 60);
 		PlayerScoreElement element = new PlayerScoreElement(PlayerScore.Value, lastFaceJpg);
 		PlayerScoreElements.Add(element);

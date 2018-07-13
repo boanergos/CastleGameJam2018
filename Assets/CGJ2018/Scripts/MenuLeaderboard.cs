@@ -16,8 +16,6 @@ public class MenuLeaderboard : MonoBehaviour
      		Destroy(child.gameObject);
  		}
 
-
-
 		for (int i = 0; i < Mathf.Clamp(LeaderboardManager.PlayerScoreElements.Count, 0, 9); i++)
 		{
 			float playerScore = LeaderboardManager.PlayerScoreElements[i].PlayerScore;
